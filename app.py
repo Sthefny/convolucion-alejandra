@@ -111,8 +111,10 @@ if punto == "Punto 1 — Convolución Discreta":
         axs[1].set_title(title_h)
         axs[1].grid(True, linestyle='--', alpha=0.4)
 
-        axs[2].stem(-n_axis, h[::-1], basefmt=" ")
-        axs[2].set_title(r"$h[-n]$")
+        n_flipped = n_axis[::-1] * -1
+        h_flipped = h[::-1]
+        axs[2].stem(n_flipped, h_flipped, basefmt=" ")
+        axs[2].set_title(r"$h[-k]$")
         axs[2].grid(True, linestyle='--', alpha=0.4)
 
         fig.tight_layout()
